@@ -9,22 +9,31 @@ const cx = classNames.bind(styles);
 const MessageList = ({
   id,
   className,
+  dataSource,
 }) => {
   return (
     <div id={id} className={cx('message-list', className)}>
-      <MessageText id="1" text="BotText BotText BotText BotText " isBot="true" />
-      <MessageText id="2" text="HumanText HumanText HumanText HumanText" />
+      {
+        dataSource.map((msg, index) => (
+          <MessageText id={`msgtxt-${index}`} text={msg.text} isBot={msg.isBot} />
+        ))
+      }
     </div>
   );
 };
 
 MessageList.defaultProps = {
   className: '',
+  dataSource: [],
 };
 
 MessageList.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
+  dataSource: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    isBot: PropTypes.bool,
+  })),
 };
 
 export default MessageList;

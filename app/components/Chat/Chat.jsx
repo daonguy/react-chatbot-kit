@@ -12,10 +12,18 @@ const Chat = ({
   id,
   className,
 }) => {
+  const chatTestData = [
+    {
+      text: 'Hello', isBot: false,
+    },
+    {
+      text: 'Howdy, How can I help you?', isBot: true,
+    },
+  ];
   return (
     <div id={id} className={cx('chat-panel', className)}>
       <TitleBar id="title" title="Chatbot" />
-      <MessageList id="message-list" />
+      <MessageList id="message-list" dataSource={chatTestData} />
       <InputMessage id="input-message" />
     </div>
   );
