@@ -1,8 +1,4 @@
-# ES6 React boilerplate using Webpack
-
-[![Travis](https://img.shields.io/travis/KleoPetroff/react-webpack-boilerplate/master.svg?style=flat-square)](https://github.com/KleoPetroff/react-webpack-boilerplate) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-
-Simple and optimized React boilerplate. It includes: 
+# ES6 React Chatbot startkit using Webpack
 
 - [x] React 16.5.2
 - [x] ECMAScript 6+ and JSX support
@@ -38,11 +34,6 @@ Make sure you have the latest Stable or LTS version of Node.js installed.
 - `npm run test:watch` - run all tests in watch mode
 - `npm run coverage` - generate code coverage report in the `coverage` folder
 
-## Vendor Exporting
-
-You can export specific vendors in separate files and load them. All vendors should be included in `app/vendors` and will be exported in a `vendors` folder under `dist`. The main idea is to serve independent JavaScript and CSS libraries, though currently all file formats are supported.
-
-! Don't forget to add the vendors in `app/index.html` and `build/index.html`.
 
 ## Code Coverage
 
