@@ -1,0 +1,12 @@
+@import '_colors';
+
+.chat-panel {
+    .title {
+        float: right;
+        margin-right: 40px;
+    }
+    
+    .message-list {
+        clear: both;
+    }
+}

@@ -1,0 +1,14 @@
+
+@import '../../assets/styles/_colors.scss';
+
+.input-message {    
+    width: 100%;
+
+    .input-box {
+        width: 450px;
+        display: block;
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 10px;
+    }
+}

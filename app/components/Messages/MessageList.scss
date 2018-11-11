@@ -1,0 +1,14 @@
+
+@import '../../assets/styles/_colors.scss';
+
+.message-list {
+    display: flex;
+    flex-direction: column;
+    height: 480px;
+    margin: 0 auto;
+    width: 600px;
+}
+
+.message {
+    margin-top: 10px;
+}
