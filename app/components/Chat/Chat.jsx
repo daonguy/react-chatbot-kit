@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './Chat.scss';
 import TitleBar from '../TitleBar';
-import InputMessage from '../InputMessage';
+import InputPanel from '../Input/InputPanel';
 import MessageList from '../Messages/MessageList';
 
 const cx = classNames.bind(styles);
@@ -14,17 +14,17 @@ const Chat = ({
 }) => {
   const chatTestData = [
     {
-      text: 'Hello', isBot: false,
+      text: 'Hello', id: '1', isBot: false,
     },
     {
-      text: 'Howdy, How can I help you?', isBot: true,
+      text: 'Howdy, How can I help you?', id: '2', isBot: true,
     },
   ];
   return (
     <div id={id} className={cx('chat-panel', className)}>
       <TitleBar id="title" title="Chatbot" />
       <MessageList id="message-list" dataSource={chatTestData} />
-      <InputMessage id="input-message" />
+      <InputPanel id="input-panel" />
     </div>
   );
 };

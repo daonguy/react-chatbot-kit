@@ -15,7 +15,7 @@ const MessageList = ({
     <div id={id} className={cx('message-list', className)}>
       {
         dataSource.map((msg, index) => (
-          <MessageText id={`msgtxt-${index}`} text={msg.text} isBot={msg.isBot} />
+          <MessageText id={`msgtxt-${index}`} key={msg.id} text={msg.text} isBot={msg.isBot} />
         ))
       }
     </div>
