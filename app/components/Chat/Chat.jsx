@@ -11,19 +11,12 @@ const cx = classNames.bind(styles);
 const Chat = ({
   id,
   className,
+  chatStore,
 }) => {
-  const chatTestData = [
-    {
-      text: 'Hello', id: '1', isBot: false,
-    },
-    {
-      text: 'Howdy, How can I help you?', id: '2', isBot: true,
-    },
-  ];
   return (
     <div id={id} className={cx('chat-panel', className)}>
       <TitleBar id="title" title="Chatbot" />
-      <MessageList id="message-list" dataSource={chatTestData} />
+      <MessageList id="message-list" chatMessages={chatStore.messages} />
       <InputPanel id="input-panel" />
     </div>
   );
@@ -31,11 +24,21 @@ const Chat = ({
 
 Chat.defaultProps = {
   className: '',
+  chatStore: {
+    messages: [],
+  },
 };
 
 Chat.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
+  chatStore: PropTypes.shape({
+    messages: PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      isBot: PropTypes.bool,
+    })),
+    addUserMessage: PropTypes.func.isRequired,
+  }),
 };
 
 export default Chat;

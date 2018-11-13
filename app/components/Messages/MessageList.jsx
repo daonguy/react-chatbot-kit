@@ -9,12 +9,12 @@ const cx = classNames.bind(styles);
 const MessageList = ({
   id,
   className,
-  dataSource,
+  chatMessages,
 }) => {
   return (
     <div id={id} className={cx('message-list', className)}>
       {
-        dataSource.map((msg, index) => (
+        chatMessages.map((msg, index) => (
           <MessageText id={`msgtxt-${index}`} key={msg.id} text={msg.text} isBot={msg.isBot} />
         ))
       }
@@ -24,13 +24,13 @@ const MessageList = ({
 
 MessageList.defaultProps = {
   className: '',
-  dataSource: [],
+  chatMessages: [],
 };
 
 MessageList.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
-  dataSource: PropTypes.arrayOf(PropTypes.shape({
+  chatMessages: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string.isRequired,
     isBot: PropTypes.bool,
   })),
