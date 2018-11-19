@@ -1,0 +1,5 @@
+export const ADD_MESSAGE = 'ADD_MESSAGE';
+export const TALK_TURN_ON = 'TALK_TURN_ON';
+export const LOAD_HISTORY = 'LOAD_HISTORY';
+export const LOAD_HISTORY_REJECTED = 'LOAD_HISTORY_REJECTED';
+
