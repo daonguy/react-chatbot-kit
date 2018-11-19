@@ -4,7 +4,9 @@
   "description": "Chatbot ES6 React startkit",
   "main": "index.jsx",
   "scripts": {
-    "start": "webpack-dev-server",
+    "client": "webpack-dev-server",
+    "server": "nodemon server/app.js",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "clean": "rimraf dist",
     "production": "cross-env npm run clean && webpack --config webpack.production.config.js --progress --profile --colors",
     "lint": "eslint ./app/**/**.jsx",
@@ -36,13 +38,20 @@
     }
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "classnames": "^2.2.6",
+    "concurrently": "^4.0.1",
     "cross-env": "5.2.0",
     "prop-types": "^15.6.2",
     "react": "16.6.1",
     "react-dom": "16.6.1",
     "react-hot-loader": "4.3.12",
-    "react-router-dom": "4.3.0"
+    "react-redux": "^5.1.1",
+    "react-router-dom": "4.3.0",
+    "redux": "^4.0.1",
+    "redux-promise": "^0.6.0",
+    "redux-thunk": "^2.3.0",
+    "webpack-hot-middleware": "^2.24.3"
   },
   "devDependencies": {
     "@babel/cli": "7.1.2",

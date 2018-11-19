@@ -17,7 +17,7 @@ const Chat = ({
     <div id={id} className={cx('chat-panel', className)}>
       <TitleBar id="title" title="Chatbot" />
       <MessageList id="message-list" chatMessages={chatStore.messages} />
-      <InputPanel id="input-panel" />
+      <InputPanel id="input-panel" addUserMessage={chatStore.addUserMessage} />
     </div>
   );
 };

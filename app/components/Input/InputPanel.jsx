@@ -11,10 +11,11 @@ const InputPanel = ({
   id,
   placeHolder,
   className,
+  addUserMessage,
 }) => {
   return (
     <div id={id} className={cx('input-panel', className)}>
-      <InputMessage id={`input-msg-${id}`} placeHolder={placeHolder} />
+      <InputMessage id={`input-msg-${id}`} placeHolder={placeHolder} addUserMessage={addUserMessage} />
       <TalkButton id="talk-button" />
     </div>
   );
@@ -23,12 +24,14 @@ const InputPanel = ({
 InputPanel.defaultProps = {
   placeHolder: 'Type your message and press enter.',
   className: '',
+  addUserMessage: () => {},
 };
 
 InputPanel.propTypes = {
   id: PropTypes.string.isRequired,
   placeHolder: PropTypes.string,
   className: PropTypes.string,
+  addUserMessage: PropTypes.func,
 };
 export default InputPanel;
 

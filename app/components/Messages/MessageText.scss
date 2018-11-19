@@ -4,6 +4,7 @@
 .message-text {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 
     span {
         background-color: $blue-light-2;

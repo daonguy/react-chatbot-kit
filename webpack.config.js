@@ -33,7 +33,13 @@ const config = {
     hot: true,
     contentBase: resolve(__dirname, 'build'),
     historyApiFallback: true,
-    publicPath: '/'
+    publicPath: '/',
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        secure: false
+      }
+    }
   },
 
   resolve: {
